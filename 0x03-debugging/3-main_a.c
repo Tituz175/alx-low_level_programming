@@ -12,10 +12,19 @@ int main(void)
     int month;
     int day;
     int year;
+    
+    printf("Enter the month: ");
+    scanf("%d", &month);
+    printf("Enter the day: ");
+    scanf("%d", &day);
+    printf("Enter the year: ");
+    scanf("%d", &year);
 
-    month = 4;
-    day = 01;
-    year = 1997;
+    /**
+    * month = 4;
+    * day = 01;
+    * year = 1997;
+    */
 
     printf("Date: %02d/%02d/%04d\n", month, day, year);
 
