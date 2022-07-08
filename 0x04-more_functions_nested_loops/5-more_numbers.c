@@ -1,23 +1,20 @@
 #include "main.h"
 
 /**
- * more_numbers - function that print number from 0 10 14 on the same line
- * ten times on a new line.
- */
-
+* more_numbers -> printing more numbers
+*/
 void more_numbers(void)
 {
-	int i;
+	int x, y;
 
-	for (i = 0; i <= 10; i++)
+	for (x = 0; x < 10; x++)
 	{
-		int j;
-
-		for (j = 0; j <= 14; j++)
+		for (y = 0; y < 15; y++)
 		{
-			printf("%d", j);
+			if (y >= 10)
+				_putchar((y / 10) + '0');
+			_putchar((y % 10) + '0');
 		}
-		printf("\n");
+		_putchar('\n');
 	}
 }
-
