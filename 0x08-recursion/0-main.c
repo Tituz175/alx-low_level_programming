@@ -1,10 +1,12 @@
-#include <stdio.h>
+void _puts_recursion(char *);
 
-
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-        char string[] = "I miss you darling";
-        _puts_recursion(string);
-
-        return (0);
+	_puts_recursion("First, solve the problem. Then, write the code");
+	return (0);
 }
