@@ -17,5 +17,6 @@ int main(void)
 		}
 		n++;
 	}
+	putchar(10);
 	return (0);
 }
