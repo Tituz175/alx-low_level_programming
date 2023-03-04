@@ -1,25 +1,22 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * _strcat -> this function copy a text for the source
- * and add it to the destination.
- * @dest: the destination string.
- * @src: the source string.
- * Return: a pointer to the destination string.
- */
-
+* _strcat -> this is a funcion strcat
+* @dest: first param
+* @src: second param
+* Return: a string
+*/
 char *_strcat(char *dest, char *src)
 {
-	int len =  0, count;
+	int len = 0, i;
 
 	while (dest[len])
 		len++;
 
-	for (count = 0; src[count] != 0; count++)
+	for (i = 0; src[i] != 0; i++)
 	{
-		dest[len] = src[count];
-		len+=1;
+		dest[len] = src[i];
+		len += 1;
 	}
 	dest[len] = '\0';
 	return (dest);
