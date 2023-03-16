@@ -1,51 +1,41 @@
 #include "main.h"
 
 /**
- * str_concat -> this function concatenates two given strings.
- * @s1: the first string.
- * @s2: the second string.
- * Return: the pointer to the new string.
- */
-
+* str_concat -> string concatinating function
+* @s1: string 1
+* @s2: string 2
+* Return: string 1 + string 2
+*/
 char *str_concat(char *s1, char *s2)
 {
+	int i = 0, j = 0, l = 0, k = 0;
 	char *s;
-	int len, count, k = 0;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	while (s1[count])
-	{
-		count++;
-		len++;
-	}
-	count = 0;
-	while (s2[count])
-	{
-		count++;
-		len++;
-	}
-	s = (char *)malloc(len * sizeof(char));
+	while (s1[i])
+		i++;
+	while (s2[j])
+		j++;
+
+	l = i + j;
+	s = (char *)malloc(l * sizeof(char) + 1);
 	if (s == NULL)
 		return (NULL);
-	count = 0;
-	while (s1[count])
+	j = 0;
+	while (k < l)
 	{
-		s[count] = s1[count];
-		count++;
+		if (k < i)
+			s[k] = s1[k];
+		if (k >= i)
+		{
+			s[k] = s2[j];
+			j++;
+		}
 		k++;
 	}
-	count = 0;
-	while (s2[count])
-	{
-		s[k] = s2[count];
-		count++;
-		k++;
-	}
-	k++;
 	s[k] = '\0';
 	return (s);
-
 }
