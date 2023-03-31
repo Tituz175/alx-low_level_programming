@@ -1,18 +1,15 @@
-section .data
-    hello db 'Hello, World!',0
+SECTION .data
+msg:	db "Hello, Holberton", 0
+fmt:	db "%s", 10, 0
 
-section .text
-    global _start
+	SECTION .text
+	extern printf
+	global main
+main:
+	mov esi, msg
+	mov edi, fmt
+	mov eax, 0
+	call printf
 
-_start:
-    ; write the message to stdout
-    mov rax, 4           ; system call for 'write'
-    mov rbx, 1           ; file descriptor for stdout
-    mov rcx, hello       ; pointer to message
-    mov rdx, 13          ; message length
-    int 0x80             ; call kernel
-
-    ; exit the program
-    mov eax, 1           ; system call for 'exit'
-    xor ebx, ebx         ; exit status code
-    int 0x80             ; call kernel
+	mov eax, 0
+	ret
