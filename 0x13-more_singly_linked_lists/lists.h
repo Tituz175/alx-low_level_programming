@@ -5,10 +5,19 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+ * struct list_s - singly linked list
+ * @n: integer
+ * @next: points to the next node
+ *
+ * Description: singly linked list node structure
+ * for Holberton project
+ */
+
 typedef struct list_s
 {
-    int n;
-    struct list_s *next;
+	int n;
+	struct list_s *next;
 } listint_t;
 
 
