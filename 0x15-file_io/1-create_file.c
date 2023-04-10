@@ -6,31 +6,40 @@
 #include <fcntl.h>
 #include <string.h>
 
+/**
+ * create_file -> this function create a file and write a the
+ * text to it.
+ *
+ * @filename: the name of the file
+ * @text_content: the text to be written to the file.
+ *
+ * Return: 1 if successful else -1
+ */
 
 int create_file(const char *filename, char *text_content)
 {
 	int fd, text_len;
-    ssize_t total_size;
+	ssize_t total_size;
 
-    if(filename == NULL)
-        return (-1);
+	if (filename == NULL)
+		return (-1);
 
-    fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 
-    text_len = strlen(text_content);
+	text_len = strlen(text_content);
 
-    if (fd == -1)
-        return (-1);
+	if (fd == -1)
+		return (-1);
 
-    if (text_len == 0)
-        text_content = "";
+	if (text_len == 0)
+		text_content = "";
 
-    total_size = write(fd, text_content, text_len);
-    
-    close(fd);
+	total_size = write(fd, text_content, text_len);
 
-    if (total_size == -1)
-        return (-1);
+	close(fd);
 
-    return (1);    
+	if (total_size == -1)
+		return (-1);
+
+	return (1);
 }
