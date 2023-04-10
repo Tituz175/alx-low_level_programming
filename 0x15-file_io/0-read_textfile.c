@@ -5,6 +5,14 @@
 #include <unistd.h>
 #include <fcntl.h>
 
+/**
+ * read_textfile -> this function read a specific number
+ * of bytes in a file
+ * @filename: this is the given file
+ * @letters: the number of bytes
+ * Return: the number of characters
+ */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	ssize_t total_size, initial_size;
@@ -18,7 +26,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (fd < 0)
 		return (0);
-	
+
 	buffer = malloc(sizeof(char) * letters);
 
 	if (buffer == NULL)
@@ -37,10 +45,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	total_size = write(STDOUT_FILENO, buffer, initial_size);
-	free (buffer);
-	
+	free(buffer);
+
 	if (total_size != initial_size)
 		return (0);
-	
-	return (total_size);	
+
+	return (total_size);
 }
