@@ -14,7 +14,7 @@ void print_binary(unsigned long int n)
 	char stopper, ch;
 
 	stopper = 0;
-	divisor = pow(2, sizeof(unsigned long int) * 8 -1);
+	divisor = (unsigned long int)pow(2, sizeof(unsigned long int) * 8 -1);
 
 	while (divisor != 0)
 	{
