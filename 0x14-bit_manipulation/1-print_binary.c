@@ -1,48 +1,53 @@
 #include "main.h"
-
 /**
- * _pow - calculates (base ^ power)
- * @base: base of the exponent
- * @power: power of the exponent
- *
- * Return: value of (base ^ power)
- */
-unsigned long int _pow(unsigned int base, unsigned int power)
-{
-	unsigned long int num;
-	unsigned int i;
+* _power -> this function calculate the power of n
+* to a given base.
+* @base_num: this is the given base number.
+* @power_num: this is the power.
+* Return: the calculated number.
+*/
 
-	num = 1;
-	for (i = 1; i <= power; i++)
-		num *= base;
-	return (num);
+unsigned long int _power(unsigned int base_num, unsigned int power_num)
+{
+	unsigned long int result;
+	unsigned int count;
+
+	result = 1;
+
+	for (count = 1; count <= power_num; count++)
+	{
+		result *= base_num;
+	}
+	return (result);
 }
 
+
 /**
- * print_binary - prints a number in binary notation
- * @n: number to print
- *
- * Return: void
- */
+* print_binary -> this function prints the binary representation
+*  of the given number.
+* @n: this is the given number.
+*/
+
 void print_binary(unsigned long int n)
 {
-	unsigned long int divisor, check;
-	char flag;
+	unsigned long int divisor, checker;
+	char stopper;
 
-	flag = 0;
-	divisor = _pow(2, sizeof(unsigned long int) * 8 - 1);
+	stopper = 0;
+	divisor = _power(2, sizeof(unsigned long int) * 8 - 1);
+
 	while (divisor != 0)
 	{
-		check = n & divisor;
-		if (check == divisor)
+		checker = n & divisor;
+
+		if (checker == divisor)
 		{
-			flag = 1;
+			stopper = 1;
 			_putchar('1');
 		}
-		else if (flag == 1 || divisor == 1)
-		{
+		else if (stopper == 1 || divisor == 1)
 			_putchar('0');
-		}
+
 		divisor >>= 1;
 	}
 }
