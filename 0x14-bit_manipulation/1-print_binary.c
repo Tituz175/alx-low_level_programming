@@ -1,6 +1,22 @@
 #include "main.h"
 #include <stdio.h>
-#include <math.h>
+
+unsigned long int _power(unsigned int base_num, unsigned int power_num);
+
+unsigned long int _power(unsigned int base_num, unsigned int power_num)
+{
+	unsigned long int result;
+	unsigned int count;
+
+	result = 1;
+
+	for (count = 1; count <= power_num; count++)
+	{
+		result *= base_num;
+	}
+	return (result);
+}
+
 
 /**
 * print_binary -> this function prints the binary representation
@@ -14,7 +30,7 @@ void print_binary(unsigned long int n)
 	char stopper, ch;
 
 	stopper = 0;
-	divisor = (unsigned long int)pow(2, sizeof(unsigned long int) * 8 -1);
+	divisor = _power(2, sizeof(unsigned long int) * 8 -1);
 
 	while (divisor != 0)
 	{
