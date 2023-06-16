@@ -26,9 +26,6 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 		count++;
 	}
 	if (head == NULL)
-	{
-		printf("head is null\n");
 		return (NULL);
-	}
 	return (head);
 }
