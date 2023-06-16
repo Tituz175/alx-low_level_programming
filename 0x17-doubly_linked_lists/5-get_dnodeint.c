@@ -18,14 +18,17 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 
 	if (index == count)
 		return (head);
-	while (head != NULL)
+	while (head)
 	{
 		if (count == index)
 			break;
 		head = head->next;
 		count++;
-		if (head == NULL)
-                	return (NULL);
+	}
+	if (head == NULL)
+	{
+		printf("head is null\n");
+		return (NULL);
 	}
 	return (head);
 }
