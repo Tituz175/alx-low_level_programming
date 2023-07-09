@@ -16,9 +16,7 @@ int main(void)
 
     ht = hash_table_create(1024);
     hash_table_set(ht, "betty", "cool");
-    ht_dump(ht);
     hash_table_set(ht, "hetairas", "conflit_1");
-    ht_dump(ht);
     hash_table_set(ht, "mentioner", "conflit_2");
 
     ht_dump(ht);
