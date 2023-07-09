@@ -37,7 +37,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		if (strcmp(ht->array[index]->key, key) == 0)
 		{
 			ht->array[index] = new_node;
-			return (1);
 		}
+		return (1);
 	}
 }
