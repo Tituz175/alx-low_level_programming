@@ -21,6 +21,9 @@ int main(void)
     hash_table_set(ht, "Asterix", "Obelix");
     hash_table_set(ht, "Betty", "Cool");
     hash_table_set(ht, "98", "Battery Street");
+    hash_table_set(ht, "hetairas", "collision_1");
+    hash_table_set(ht, "mentioner", "collision_2");
+
     hash_table_print(ht);
     return (EXIT_SUCCESS);
 }
